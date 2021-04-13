@@ -1,0 +1,23 @@
+#Interface settings
+
+#filter :   
+    #-dots  true
+    #-fail (Not set, no default)
+    -filter  filter_edit1.txt
+    #-flagTableFailures  false
+    -in  teste[babel]zincworld.mol2
+    #-info (Not set, no default)
+    #-interval  5000
+    #-log (Not set, no default)
+    #-newrule (Not set, no default)
+    #-normalize (Not set, no default)
+    -out  filter_teste[babel]zincworld.mol2
+    #-param (Not set, no default)
+    #-pkanorm  true
+    #-prefix  filter
+    -salt  true
+    #-sdtag  false
+    #-select (Not set, no default)
+    #-table (Not set, no default)
+    #-typecheck  true
+    #-unique  false

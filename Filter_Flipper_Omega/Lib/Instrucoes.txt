@@ -1,0 +1,51 @@
+*** Instrucoes ***
+
+** Como o Script Finciona **
+
+A intencao do script e criar um Pipeline entre os programas Filter Flipper e Omega, pelo qual o usuario insere apenas as bases serem preparadas e o script automaticamente processara cada base de dado perante ao filtro e aos parametros escolhidos 
+
+O Script ira criar dentro do diretorio Bases_de_Dados um subdiretorio "Ano_Nome Base" 
+
+Dentro do subdiretorio 'Ano_Nome Base' ira criar encaminhar um .txt com o tempo de execução para cada base e os subdiretorios 
+
+*'Baixada' - para onde encaminhara a base input
+*'Filter' - onde encaminhará os resultados para o filter
+       _
+*'3D'   |
+ '25'   |
+ '100'   > A depender do estudo para onde encaminhara os resultados do OMEGA
+ '200   |
+ '300' _| 
+
+
+*E MUITO importante que no diretorio de execução do script contenha APENAS as bases a serem preparadas e os filtros e parametros 
+
+*** Dados dos Filtros e Parametros ***
+Para uma melhor organizacao da pasta os filtros e parametros estao como arquivo oculto, caso necessite dos mesmos e so deixa-los visiveis
+
+Caso necessite de um novo filtro o mesmo deve comecar com a palavra 'filtro' e o parametro deve conter a extensao .parm - Lembrando que o nome do parametro sera o nome do subdiretorio que sera criado para tal
+
+Filtro_01 - 
+Filtro_02 - 
+Filtro_03 -
+Filtro_BlockBuster
+Filtro_CNSGui 
+
+Prametros:
+
+3D - 
+
+25 - 
+
+100 - 
+
+200 - 
+
+300 - 
+
+_______________
+
+Créditos e Dúvidas
+LeoRoke lbfederico@usp.br - desenvolvimento do script e parametros Omega
+Gui da Silva - e-mal - parametros filter, flipper e omega
+Quaisquer duvidas a mais relacionadas aos parametros perguntar ao Carlos

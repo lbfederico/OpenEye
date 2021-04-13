@@ -1,0 +1,7 @@
+#/**********************************************************************
+#Copyright (C) 2000-2005, 2010 by OpenEye Scientific Software, Inc.
+#***********************************************************************/
+#This file defines the rules for filtering multi-structure files based on 
+#properties and substructure patterns.
+MIN_CHIRAL_CENTERS   0   "Minimum chiral centers"
+MAX_CHIRAL_CENTERS   2  "Maximum chiral centers"

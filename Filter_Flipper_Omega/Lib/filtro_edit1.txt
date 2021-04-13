@@ -1,0 +1,5 @@
+#/**********************************************************************
+#Copyright (C) 2000-2005, 2010 by OpenEye Scientific Software, Inc.
+#***********************************************************************/
+#This file defines the rules for filtering multi-structure files based on 
+#properties and substructure patterns.

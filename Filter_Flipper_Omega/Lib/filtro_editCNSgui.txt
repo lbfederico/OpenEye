@@ -1,0 +1,269 @@
+#/**********************************************************************
+#Copyright (C) 2000-2005, 2010 by OpenEye Scientific Software, Inc.
+#***********************************************************************/
+#This file defines the rules for filtering multi-structure files based on 
+#properties and substructure patterns.
+MIN_MOLWT      0         "Minimum molecular weight"
+MAX_MOLWT      320         "Maximum molecular weight"
+
+MIN_NUM_HVY   9          "Minimum number of heavy atoms"
+MAX_NUM_HVY   55         "Maximum number of heavy atoms"
+
+MIN_RING_SYS    0      "Minumum number of ring systems"
+MAX_RING_SYS    5      "Maximum number of ring systems"
+
+MIN_RING_SIZE    0      "Minimum atoms in any ring system"
+MAX_RING_SIZE    20      "Maximum atoms in any ring system"
+
+MIN_CON_NON_RING    0      "Minimum number of connected non-ring atoms"
+MAX_CON_NON_RING    19     "Maximum number of connected non-ring atoms"
+
+MIN_FCNGRP       0      "Minimum number of functional groups"
+MAX_FCNGRP       7      "Maximum number of functional groups"
+
+MIN_UNBRANCHED   1      "Minimum number of connected unbranched non-ring atoms"
+MAX_UNBRANCHED   13     "Maximum number of connected unbranched non-ring atoms"
+
+MIN_CARBONS      3      "Minimum number of carbons"
+MAX_CARBONS      41      "Maximum number of carbons"
+
+MIN_HETEROATOMS    0      "Minimum number of heteroatoms"
+MAX_HETEROATOMS    21      "Maximum number of heteroatoms"
+
+MIN_Het_C_Ratio    0.04     "Minimum heteroatom to carbon ratio"
+MAX_Het_C_Ratio    4.0      "Maximum heteroatom to carbon ratio"      
+
+MIN_HALIDE_FRACTION      0.0      "Minimum Halide Fraction"
+MAX_HALIDE_FRACTION      0.66     "Maximum Halide Fraction"
+
+#count ring degrees of freedom = (#BondsInRing) - 4 - (RigidBondsInRing) - (BondsSharedWithOtherRings)
+#must be >= 0, from JCAMD 14:251-265,2000.
+ADJUST_ROT_FOR_RING     true      "BOOLEAN for whether to estimate degrees of freedom in rings"
+
+MIN_ROT_BONDS    0      "Minimum number of rotatable bonds"
+MAX_ROT_BONDS    16      "Maximum number of rotatable bonds"
+
+MIN_RIGID_BONDS    4      "Minimum number of rigid bonds"
+MAX_RIGID_BONDS    55      "Maximum number of rigid bonds"
+
+MIN_HBOND_DONORS  0      "Minimum number of hydrogen-bond donors"    
+MAX_HBOND_DONORS  9      "Maximum number of hydrogen-bond donors"    
+
+MIN_HBOND_ACCEPTORS  0      "Minimum number of hydrogen-bond acceptors"    
+MAX_HBOND_ACCEPTORS  13     "Maximum number of hydrogen-bond acceptors"    
+
+MIN_LIPINSKI_DONORS  0      "Minimum number of hydrogens on O & N atoms"
+MAX_LIPINSKI_DONORS  6      "Maximum number of hydrogens on O & N atoms"
+
+MIN_LIPINSKI_ACCEPTORS  1      "Minimum number of oxygen & nitrogen atoms"
+MAX_LIPINSKI_ACCEPTORS  14      "Maximum number of oxygen & nitrogen atoms"
+
+MIN_COUNT_FORMAL_CRG    0      "Minimum number formal charges"
+MAX_COUNT_FORMAL_CRG    4      "Maximum number of formal charges"
+
+MIN_SUM_FORMAL_CRG   -2      "Minimum sum of formal charges"
+MAX_SUM_FORMAL_CRG    2      "Maximum sum of formal charges"
+
+MIN_CHIRAL_CENTERS   0   "Minimum chiral centers"
+MAX_CHIRAL_CENTERS   21  "Maximum chiral centers"
+
+MIN_XLOGP      1.0      "Minimum XLogP"
+MAX_XLOGP       5.00     "Maximum XLogP"
+
+#choices are insoluble<poorly<moderately<soluble<very<highly
+MIN_SOLUBILITY      insoluble "Minimum solubility"
+
+PSA_USE_SandP   false    "Count S and P as polar atoms"
+MIN_2D_PSA      0.0      "Minimum 2-Dimensional (SMILES) Polar Surface Area"
+MAX_2D_PSA      70.0    "Maximum 2-Dimensional (SMILES) Polar Surface Area"
+
+AGGREGATORS    true      "Eliminate known aggregators"
+PRED_AGG       false     "Eliminate predicted aggregators"
+
+#secondary filters (based on multiple primary filters)
+GSK_VEBER      false     "PSA>140 or >10 rot bonds"
+MAX_LIPINSKI   3         "Maximum number of Lipinski violations"
+MIN_ABS        0.11      "Minimum probability F>10% in rats"
+PHARMACOPIA    false     "LogP > 5.88 or PSA > 131.6"
+
+ALLOWED_ELEMENTS  H,C,N,O,F,P,S,Cl,Br,I
+ELIMINATE_METALS Sc,Ti,V,Cr,Mn,Fe,Co,Ni,Cu,Zn,Y,Zr,Nb,Mo,Tc,Ru,Rh,Pd,Ag,Cd
+
+#acceptable molecules must have <= instances of each of the patterns below
+
+#specific, undesirable functional groups
+
+RULE  0  quinone
+RULE  0  pentafluorophenyl_esters
+RULE  0  paranitrophenyl_esters
+RULE  0  HOBT_esters
+RULE  0  triflates
+RULE  0  lawesson_s_reagent
+RULE  0  phosphoramides
+RULE  1  beta_carbonyl_quat_nitrogen
+RULE  0  acylhydrazide
+RULE  0  cation_C_Cl_I_P_or_S
+RULE  0  phosphoryl
+RULE  0  alkyl_phosphate
+RULE  1  phosphinic_acid
+RULE  0  phosphanes
+RULE  0  phosphoranes
+RULE  0  imidoyl_chlorides
+RULE  0  nitroso
+RULE  0  N_P_S_Halides
+RULE  0  carbodiimide
+RULE  0  isonitrile
+RULE  0  triacyloxime
+RULE  0  cyanohydrins
+RULE  0  acyl_cyanides
+RULE  0  sulfonylnitrile
+RULE  0  phosphonylnitrile
+RULE  0  azocyanamides
+RULE  0  beta_azo_carbonyl
+RULE  2  polyenes
+RULE  0  saponin_derivatives
+RULE  1  cytochalasin_derivatives
+RULE  4  cycloheximide_derivatives
+RULE  1  monensin_derivatives
+RULE  1  squalestatin_derivatives
+
+#functional groups which often eliminate compounds from consideration
+
+RULE  0  acid_halide
+RULE  0  aldehyde
+RULE  3  alkyl_halide
+RULE  0  anhydride
+RULE  0  azide
+RULE  0  azo
+RULE  2  di_peptide
+RULE  1  michael_acceptor
+RULE  0  beta_halo_carbonyl
+RULE  3  nitro
+RULE  0  oxygen_cation
+RULE  0  peroxide
+RULE  0  phosphonic_acid
+RULE  0  phosphonic_ester
+RULE  0  phosphoric_acid
+RULE  0  phosphoric_ester
+RULE  1  sulfonic_acid
+RULE  0  sulfonic_ester
+RULE  0  tricarbo_phosphene
+RULE  0  epoxide
+RULE  0  sulfonyl_halide
+RULE  0  halopyrimidine
+RULE  0  perhalo_ketone
+RULE  0  aziridine
+RULE  1  oxalyl
+RULE  0  alphahalo_amine 
+RULE  0  halo_amine 
+RULE  1  halo_alkene
+RULE  0  acyclic_NCN
+RULE  0  acyclic_NS
+RULE  0  SCN2
+RULE  0  terminal_vinyl
+RULE  0  hetero_hetero
+RULE  0  hydrazine
+RULE  0  N_methoyl
+RULE  2  NS_beta_halothyl
+RULE  0  propiolactones
+RULE  0  iodoso
+RULE  0  iodoxy
+RULE  0  noxide
+
+
+#groups of molecules
+
+RULE  2  dye
+  
+#functional groups which are allowed, but may not be wanted in high quantities
+#common functional groups
+
+RULE  6  alcohol
+RULE  5  alkene
+RULE  4  amide
+RULE  4  amino_acid
+RULE  3  amine
+RULE  3  primary_amine
+RULE  3  secondary_amine
+RULE  3  tertiary_amine
+RULE  2  carboxylic_acid
+RULE  6  halide
+RULE  4  iodine
+RULE  3  ketone
+RULE  4  phenol
+RULE  2  imine
+RULE  1  methyl_ketone
+RULE  1  alkylaniline
+RULE  2  sulfonamide 
+RULE  1  sulfonylurea 
+RULE  0  phosphonamide 
+RULE  1  alphahalo_ketone
+RULE  0  oxaziridine
+RULE  1  cyclopropyl
+RULE  2  guanidine
+RULE  0  sulfonimine
+RULE  0  sulfinimine
+RULE  1  hydroxamic_acid
+RULE  0  sulfinylthio
+RULE  0  disulfide
+RULE  0  enol_ether
+RULE  2  enamine
+RULE  0  organometallic
+RULE  0  dithioacetal
+RULE  1  oxime
+RULE  0  isothiocyanate
+RULE  0  isocyanate
+RULE  2  lactone
+RULE  2  lactam
+RULE  1  thioester
+RULE  1  carbonate
+RULE  0  carbamic_acid
+RULE  1  thiocarbamate
+RULE  0  triazine
+RULE  1  malonic
+
+#other functional groups
+
+RULE  2  alkyne
+RULE  4  aniline
+RULE  4  aryl_halide
+RULE  2  carbamate
+RULE  3  ester
+RULE  6  ether
+RULE  1  hydrazone
+RULE  0  nonacylhydrazone
+RULE  1  hydroxylamine
+RULE  2  nitrile
+RULE  2  sulfide
+RULE  2  sulfone
+RULE  2  sulfoxide
+RULE  1  thiourea
+RULE  1  thioamide
+RULE  1  thiol
+RULE  2  urea
+
+RULE  0  hemiketal 
+RULE  0  hemiacetal
+RULE  0  ketal
+RULE  3  acetal
+RULE  0  aminal
+RULE  0  hemiaminal
+
+#protecting groups
+
+RULE  0  benzyloxycarbonyl_CBZ
+RULE  0  t_butoxycarbonyl_tBOC
+RULE  0  fluorenylmethoxycarbonyl_Fmoc
+RULE  1  dioxolane_5MR
+RULE  1  dioxane_6MR
+RULE  1  tetrahydropyran_THP
+RULE  1  methoxyethoxymethyl_MEM
+RULE  2  benzyl_ether
+RULE  2  t_butyl_ether
+RULE  0  trimethylsilyl_TMS
+RULE  0  t_butyldimethylsilyl_TBDMS
+RULE  0  triisopropylsilyl_TIPS
+RULE  0  t_butyldiphenylsilyl_TBDPS
+RULE  1  phthalimides_PHT
+RULE  2  arenesulfonyl
+

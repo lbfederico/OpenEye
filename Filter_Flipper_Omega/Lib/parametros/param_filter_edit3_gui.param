@@ -1,0 +1,23 @@
+#Interface settings
+
+#filter :   
+    #-dots  true
+    -fail true
+    -filter  filter_edit3.txt
+    #-flagTableFailures  false
+    #-in  TESTE.sdf
+    #-info (Not set, no default)
+    #-interval  5000
+    #-log (Not set, no default)
+    #-newrule (Not set, no default)
+    #-normalize (Not set, no default)
+    #-out  [filter2chiral]TESTE.sdf
+    #-param (Not set, no default)
+    #-pkanorm  true
+    #-prefix  filter
+    -salt true
+    #-sdtag  false
+    #-select (Not set, no default)
+    #-table (Not set, no default)
+    #-typecheck  true
+    #-unique  false
