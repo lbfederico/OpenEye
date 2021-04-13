@@ -42,16 +42,16 @@ while True:
 
 #Sim e não para e-mail
 
-        envia_email = input(str('Gostaria de receber um e-mail quando o seu processo terminar? [s/n]'))
+        envia_email = input(str('Gostaria de receber um e-mail quando o seu processo terminar? [s/n]')).strip().upper()
         print()
-        if envia_email =='s':
+        if envia_email =='S':
             email = str(input('Por favor digite seu email: '))
             cabeçalho('Beleuza, quando o processo acabar enviaremos um email de'
                       '\nlcqfusp@gmail.com com o assunto: Processo Rocs e Eon'
                       '\nVamos continuar a brincadera! ')
             sleep(5)
 
-        elif envia_email =='n':
+        elif envia_email =='N':
             print(linha())
             print('Eeeeeeeeeeita, blz sem ressentimentos'
                   '\nVamos prosseguir! ')
@@ -264,7 +264,7 @@ while True:
             arquivo.close()
 
 # enviar email
-            if envia_email == 's':
+            if envia_email == 'S':
                 server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
                 server.login('login', 'senha')
                 server.sendmail(
@@ -273,7 +273,7 @@ while True:
                     'seu processo Rocs/ Eon finalizou'
                 )
                 server.quit()
-            elif envia_email == 'n':
+            elif envia_email == 'N':
                 continue
 
 # Procurar pelo arquivo de texto com o prefixo 'time'
