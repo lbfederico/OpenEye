@@ -187,6 +187,9 @@ def principal():
         server.login('login', 'senha')
         server.sendmail("lcqfusp@gmail.com", str(email), 'OMEGA Terminou')
         server.quit()
+        
+     elif envio_enail == 'N':
+        continue
 
 
     #Mover data e hora para a pasta da base
