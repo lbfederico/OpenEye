@@ -1,0 +1,32 @@
+                                          ***Informacoes importantes***
+
+As bases de dados devem necessariamente estar dentro do diretorio "Bases_de_dados" (D:\Bases_de_Dados), com atalho no Desktop
+
+As bases de dados so serao listadas se estiverem dentro de qualquer subdiretório em (D:\Bases_de_Dados\...) com a indicação 300 ou 200 no seu nome
+
+O nome de usuario deve ser necessariamente identico ao da sua pasta pessoal presente no "D:" 
+
+O script ira criar dentro do seu diretório (D:\'seu_nome') uma pasta com os resultados do ROCS e outra para o EON.
+
+Se o estudo apresentar mais de 1 'query' colocar todos em um arquivo unico e informar o nome do arquivo.
+Os resultados para cada query serao nomeados com o final hits_1, hits_2,...hits_n,... 
+
+
+                                              ***O que o script faz***
+
+O RocsEonRun automatiza o uso de todas as bases sem que o usuário tenha que digitar uma linha de comando para cada base utilizada
+e integra os resultados do ROCS com o EON
+
+O script ira listar todas as bases que se encotram no diretório "Bases_de_dados" com a indicação 300 ou 200
+
+O usuário deverá escolher qual base utilizar por meio dos números de cada base separados por ","
+
+Ao responder as perguntas de quantos hits obter para cada programa o RocsEonRun irá criar um diretorio pra cada programa dentro da sua pasta pessoal e alocar os resultados nelas
+
+Se tiver curiosidade em saber quanto tempo cada programa demorou para processar seus dados veja em 'time.txt'
+
+***A intensao do script e nao perder tempo entre o termino de uma base e inicio de outra alem de nao precisar escrever uma linha de comando para cada base.
+
+
+Créditos - LeoRoke (lbfederico@usp.br)
+
